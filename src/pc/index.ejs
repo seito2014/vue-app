@@ -1,0 +1,36 @@
+<% include view/const/_const %>
+<%
+var id = "index";
+var title = "";
+var description = "sample text,sample tex";
+var keywords = "word1,word2,word3";
+var type = "blog";
+%>
+<% include view/metadata/_head %>
+<% include view/layout/_l-header %>
+
+<!--start l-contents-->
+<main class="l-container">
+
+    <div id="v-app">
+
+        <input type="text" class="input" placeholder="Input texts here" v-model="input">
+        <input type="hidden" v-model="input">
+        <button type="button" class="button" v-on:click="output = input">OK</button>
+
+        {{ output }}
+
+        <p v-if="output === ''">No text</p>
+        <p v-if="output !== ''">Complete</p>
+    </div>
+
+    <!--<div id="app-2">-->
+        <!--<p v-if="seen !== true">No text</p>-->
+        <!--<p v-if="seen">Complete</p>-->
+    <!--</div>-->
+
+</main>
+<!--end l-contents-->
+
+<% include view/layout/_l-footer %>
+<% include view/metadata/_script %>
